@@ -2,6 +2,7 @@ package com.yunwanjia.guli.service.base.handler;
 
 import com.yunwanjia.guli.common.base.result.ResultCodeEnum;
 import com.yunwanjia.guli.common.base.result.ResultDTO;
+import com.yunwanjia.guli.common.base.util.ExceptionUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.jdbc.BadSqlGrammarException;
@@ -27,14 +28,14 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(BadSqlGrammarException.class)
     @ResponseBody
     public ResultDTO error(BadSqlGrammarException e) {
-        log.error(e.getMessage());
+        log.error(ExceptionUtils.getMessage(e));
         return ResultDTO.setResult(ResultCodeEnum.BAD_SQL_GRAMMAR);
     }
 
     @ExceptionHandler(HttpMessageNotReadableException.class)
     @ResponseBody
     public ResultDTO error(HttpMessageNotReadableException e) {
-        log.error(e.getMessage());
+        log.error(ExceptionUtils.getMessage(e));
         return ResultDTO.setResult(ResultCodeEnum.JSON_PARSE_ERROR);
     }
 }
