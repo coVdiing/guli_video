@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration  scan="true" scanPeriod="10 seconds">
+<configuration scan="true" scanPeriod="10 seconds">
 
     <contextName>logback</contextName>
 
-    <property name="log.path" value="F:/project_2021/guli_log/edu" />
+    <property name="log.path" value="F:/project_2021/guli_log/edu"/>
 
     <!--控制台日志格式：彩色日志-->
     <!-- magenta:洋红 -->
@@ -16,11 +16,11 @@
 
     <!--文件日志格式-->
     <property name="FILE_LOG_PATTERN"
-              value="%date{yyyy-MM-dd HH:mm:ss} |%-5level |%thread |%file:%line |%logger |%msg%n" />
+              value="%date{yyyy-MM-dd HH:mm:ss} |%-5level |%thread |%file:%line |%logger |%msg%n"/>
 
     <!--编码-->
     <property name="ENCODING"
-              value="UTF-8" />
+              value="UTF-8"/>
 
     <!--输出到控制台-->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
@@ -114,17 +114,17 @@
     <springProfile name="dev">
         <!--可以灵活设置此处，从而控制日志的输出-->
         <root level="INFO">
-            <appender-ref ref="CONSOLE" />
-           <!-- <appender-ref ref="INFO_FILE" />
-            <appender-ref ref="WARN_FILE" />
-            <appender-ref ref="ERROR_FILE" />-->
+            <appender-ref ref="CONSOLE"/>
+            <appender-ref ref="INFO_FILE"/>
+            <appender-ref ref="WARN_FILE"/>
+            <appender-ref ref="ERROR_FILE"/>
         </root>
     </springProfile>
 
     <!--生产环境-->
     <springProfile name="pro">
         <root level="ERROR">
-            <appender-ref ref="ERROR_FILE" />
+            <appender-ref ref="ERROR_FILE"/>
         </root>
     </springProfile>
 
