@@ -26,6 +26,7 @@ import java.util.List;
 @Api(tags = "讲师操作接口")
 @RestController
 @RequestMapping("/admin/edu/teacher")
+@CrossOrigin
 public class TeacherController {
     @Autowired
     private TeacherService teacherService;
