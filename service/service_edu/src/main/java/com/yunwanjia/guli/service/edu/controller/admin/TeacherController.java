@@ -6,10 +6,7 @@ import com.yunwanjia.guli.common.base.result.ResultDTO;
 import com.yunwanjia.guli.service.edu.entity.Teacher;
 import com.yunwanjia.guli.service.edu.entity.vo.TeacherQueryVo;
 import com.yunwanjia.guli.service.edu.service.TeacherService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -83,7 +80,7 @@ public class TeacherController {
     }
 
     @ApiOperation("根据id获取讲师信息")
-    @PostMapping("/get/{id}")
+    @GetMapping("/get/{id}")
     public ResultDTO getById(@ApiParam("讲师id") @PathVariable String id) {
         Teacher byId = teacherService.getById(id);
         if (byId != null) {
