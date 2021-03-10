@@ -8,7 +8,7 @@ spring:
 
 aliyun:
   oss:
-    endpoint:
-    keyid:
-    keysecret:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    keyid: LTAI4GEeja12m2M5sYw4GWe2
+    keysecret: f8SzZBzvWt0XmIPFpha8NZ7bVfDs4t
     bucketname: guli-file-vi
