@@ -12,4 +12,10 @@ public interface FileService {
      * @return
      */
     String upload(InputStream inputStream, String module, String origin);
+
+    /**
+     * 阿里云oss 文件删除
+     * @param url 文件url
+     */
+    void removeFile(String url);
 }

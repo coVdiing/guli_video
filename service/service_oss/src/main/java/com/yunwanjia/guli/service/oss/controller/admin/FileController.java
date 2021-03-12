@@ -43,4 +43,25 @@ public class FileController {
         }
         return ResultDTO.ok().data("url", uploadUrl).message("文件上传成功");
     }
+
+    @ApiOperation("测试远程服务调用")
+    @PostMapping("/test")
+    public ResultDTO test() {
+        log.info("oss被调用");
+        return ResultDTO.ok();
+    }
+
+    @ApiOperation("删除文件")
+    @PostMapping("/remove-file")
+    public ResultDTO removeFile(
+            @ApiParam(value="文件路径",required = true)
+            @RequestParam String url) {
+        try {
+            fileService.removeFile(url);
+        } catch (Exception e) {
+            log.error(ExceptionUtils.getMessage(e));
+            throw new GuliException(ResultCodeEnum.FILE_DELETE_ERROR);
+        }
+        return ResultDTO.ok().message("文件删除成功");
+    }
 }

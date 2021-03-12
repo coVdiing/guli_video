@@ -13,3 +13,4 @@ public class OssProperties {
     private String keysecret;
     private String bucketname;
 }
+
